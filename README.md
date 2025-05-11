@@ -4,7 +4,7 @@ A Vue 3 frontend for the GeoCam iPhone application that automatically geotags ph
 
 ## Project Structure
 
-\\\
+```
 geocam-webclient/
 ├── src/
 │   ├── assets/               # Static assets (images, fonts)
@@ -30,7 +30,7 @@ geocam-webclient/
 ├── .gitignore
 ├── package.json
 └── README.md
-\\\
+```
 
 ## Requirements
 
@@ -40,9 +40,9 @@ geocam-webclient/
 - Git
 
 ### Development Requirements
-\\\ash
+```bash
 npm install -g @vue/cli
-\\\
+```
 
 ### Project Dependencies
 - Vue 3
@@ -52,26 +52,23 @@ npm install -g @vue/cli
 - Axios (for API calls)
 
 ### Environment Variables
-Create a \.env\ file with:
-\\\
+Create a `.env` file with:
+```
 VUE_APP_MAPBOX_TOKEN=your_mapbox_access_token
 VUE_APP_API_BASE_URL=your_api_base_url
-\\\
+```
 
 ## Installation
-\\\ash
+```bash
 git clone https://github.com/SP3DAG/geocam-webclient.git
 cd geocam-webclient
 npm install
 npm run dev
-\\\
+```
 
 ## Development Scripts
-\\\ash
+```bash
 npm run dev     # Start development server
 npm run build   # Create production build
 npm run lint    # Run linter
-\\\
-
-## Contributors
-- [Your Name](https://github.com/yourusername)
+```
