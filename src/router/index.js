@@ -8,19 +8,19 @@ const routes = [
     component: HomeView
   },
   {
-    path: '/capture',
-    name: 'capture',
-    component: () => import('@/views/CaptureView.vue')
+    path: '/validate',
+    name: 'validate',
+    component: () => import('@/views/ValidateView.vue')
   },
   {
-    path: '/gallery',
-    name: 'gallery',
-    component: () => import('@/views/GalleryView.vue')
+    path: '/product',
+    name: 'product',
+    component: () => import('@/views/ProductView.vue')
   },
   {
-    path: '/map',
-    name: 'map',
-    component: () => import('@/views/MapView.vue')
+    path: '/shop',
+    name: 'shop',
+    component: () => import('@/views/ShopView.vue')
   }
 ]
 

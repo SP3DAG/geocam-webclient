@@ -1,5 +1,18 @@
+<script setup>
+import { useRoute } from 'vue-router'
+import { ref, watch } from 'vue'
+
+const route = useRoute()
+
+import Navbar from "@/components/Navbar.vue";
+
+//const username = ref(route.params.id)
+</script>
 <template>
-  <router-view />
+  <div id="app">
+    <Navbar />
+    <RouterView />
+  </div>
 </template>
 
 <script>
@@ -10,4 +23,5 @@ export default {
 
 <style>
 /* Global styles here */
+
 </style>
