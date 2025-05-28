@@ -1,10 +1,10 @@
 <script setup>
 import { useRoute } from 'vue-router'
-import { ref, watch } from 'vue'
+import Navbar from "@/components/Navbar.vue";
+//import { ref, watch } from 'vue'
 
 const route = useRoute()
-
-import Navbar from "@/components/Navbar.vue";
+console.log(route)
 
 //const username = ref(route.params.id)
 </script>
