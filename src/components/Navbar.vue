@@ -28,12 +28,15 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  width: calc(100vw - 20px);
+  width: 100%;
   background-color: var(--white-soft);
   font-size: 1.5rem;
   font-weight: bold;
   color: var(--black);
+  z-index: 10;
+}
+.brand, nav{
+  margin: 20px;
 }
 .brand a{
   display: flex;
