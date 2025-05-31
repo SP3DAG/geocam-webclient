@@ -23,12 +23,13 @@ export default {
 
 <style scoped>
 .header{
-  position: sticky;
+  position: fixed;
   top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
+  width: calc(100vw - 20px);
   background-color: var(--white-soft);
   font-size: 1.5rem;
   font-weight: bold;
@@ -51,6 +52,7 @@ export default {
   list-style: none;
   display: flex;
   gap: 20px;
+  margin-right: 20px;
 }
 
 .header nav a {

@@ -79,7 +79,6 @@ export default {
   height: 600vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 .section {
