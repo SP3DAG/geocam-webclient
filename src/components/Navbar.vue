@@ -8,7 +8,7 @@ export default {
   <header class="header">
     <div class="brand">
 
-      <RouterLink to="/"><img class="logo" src="../assets/logo_v1.png" alt="logo" />Geocam</RouterLink>
+      <RouterLink to="/"><img class="logo" src="../assets/logo_v1.png" alt="logo" />GeoCam</RouterLink>
     </div>
     <nav>
       <ul>

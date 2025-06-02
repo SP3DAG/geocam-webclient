@@ -38,8 +38,8 @@
     </Carousel>
 
     <div id="carousel-nav">
-      <button class="carousel-btn" @click="prev"><i class="bi bi-arrow-left-circle"></i></button>
-      <button class="carousel-btn" @click="next"><i class="bi bi-arrow-right-circle"></i></button>
+      <button class="carousel-btn" aria-label="carousel-prev" @click="prev"><i class="bi bi-arrow-left-circle"></i></button>
+      <button class="carousel-btn" aria-label="carousel-next" @click="next"><i class="bi bi-arrow-right-circle"></i></button>
     </div>
   </section>
   <section class="small">
