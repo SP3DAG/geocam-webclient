@@ -10,7 +10,7 @@ export async function uploadFile(file, url) {
 	// change status to indicate the success of the upload request
 	file.status = response.ok
 
-	return response
+	return response.json()
 }
 
 export function uploadFiles(files, url) {
