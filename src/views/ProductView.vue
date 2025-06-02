@@ -30,7 +30,7 @@
     <b id="carousel-headline">
       See the features
     </b>
-    <Carousel ref="carouselRef" v-model="currentSlide" v-bind="config" id="feature-carousel">
+    <Carousel ref="carouselRef" v-model="currentSlide" v-bind="config" id="feature-carousel" gap=35 wrapAround="true" >
       <Slide v-for="image in images" :key="image.id">
         <img :src="image.img" alt="image" class="carousel-img " />
         <p class="slide-text">{{ image.text }}</p>
@@ -38,9 +38,8 @@
     </Carousel>
 
     <div id="carousel-nav">
-      <button @click="prev">Prev</button>
-      <input type="number" min="0" max="9" v-model="currentSlide" />
-      <button @click="next">Next</button>
+      <button class="carousel-btn" @click="prev"><i class="bi bi-arrow-left-circle"></i></button>
+      <button class="carousel-btn" @click="next"><i class="bi bi-arrow-right-circle"></i></button>
     </div>
   </section>
   <section class="small">
@@ -56,6 +55,9 @@
 </template>
 
 <style scoped>
+  *{
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  }
   section{
     width: 100%;
     display: grid;
@@ -80,8 +82,6 @@
     grid-row: 2;
     font-size: 100pt;
   }
-  
-
 
 /* Animation for scroll info */
 .mouse {
@@ -126,20 +126,22 @@
 #feature-section-2{
     grid-template-columns: 1fr 3fr 1fr;
     grid-template-rows: 1fr 3fr 1fr;
-    background: linear-gradient(320deg,rgba(13, 10, 11, 1) 0%, rgba(69, 73, 85, 1) 33%, rgba(63, 125, 32, 1) 67%, rgba(114, 176, 29, 1) 100%);
+    background: linear-gradient(320deg,var(--black) 0%, var(--grey) 33%, var(--green) 67%, var(--light-green) 100%);
 }
 .carousel-img {
   border-radius: 15px;
   width: 100%;
   height: 100%;
-  max-height: 85vh;
+  max-height: 65vh;
   object-fit: cover;
+  margin: 0;
 }
 #carousel-headline{
   grid-column: 1;
   grid-row: 1;
   font-size: 30pt;
   margin-top: 1.5rem;
+  color: var(--black);
 }
 #carousel-nav{
   grid-column: 3;
@@ -148,7 +150,7 @@
 #feature-carousel{
     grid-column: 1/4;
     grid-row: 2;
-    height: 80%;
+    height: 100%;
 }
 .slide-text{
   z-index: 2;
@@ -157,5 +159,12 @@
   font-size: 45pt;
   max-width: 30%;
   color: var(--white-soft);
+}
+.carousel-btn{
+  background: transparent;
+  border: none;
+  font-size: 30pt;
+  margin: 1rem;
+  color: var(--light-green);
 }
 </style>
