@@ -4,11 +4,11 @@
 		<h1 id="headline">Validate your images here!</h1>
 		<DropZone class="drop-area" @files-dropped="addFiles" #default="{ dropZoneActive }">
 			<label for="file-input">
-			<span v-if="dropZoneActive">
+			<span v-if="dropZoneActive & files.length < 1">
 				<span>Drop Them Here</span>
 				<span class="smaller">to add them</span>
 			</span>
-			<span v-else>
+			<span v-if="!dropZoneActive & files.length < 1">
 				<span>Drag Your Files Here</span>
 				<span class="smaller">
 				or <strong><em>click here</em></strong> to select files
@@ -21,8 +21,8 @@
 			<FilePreview v-for="file of files" :key="file.id" :file="file" tag="li" @remove="removeFile" />
 			</ul>
 		</DropZone>
-		<button @click.prevent="startValidating(files)" class="upload-button">Upload</button>
-		<div id="result">{{ responseMessage }}</div>
+		<button v-if="files.length > 0" @click.prevent="startValidating(files)" class="upload-button">Validate</button>
+		<div id="result"><ValidationResult :msg=responseMessage /></div>
 		</div>
 	</div>
 </template>
@@ -36,6 +36,7 @@ import createUploader from '@/utils/file-uploader'
 
 // File Management
 import useFileList from '@/utils/file-list'
+import ValidationResult from "@/components/ValidationResult.vue";
 const { files, addFiles, removeFile } = useFileList()
 const responseMessage = ref("")
 
@@ -51,43 +52,7 @@ function startValidating(files) {
 	})
 }
 
-const { uploadFiles } = createUploader('http://127.0.0.1:8000/verify-image/')
-</script>
-<script>
-/*function validateInput(){
-	
-	console.log(this.files)
-	const file = this.files[0];
-	if (!file) return;
-
-	
-
-	const formData = new FormData();
-	formData.append("file", file);
-
-	resultDiv.textContent = "Verifying...";
-
-	try {
-		const response = fetch("http://127.0.0.1:8000/verify-image/", {
-		method: "POST",
-		body: formData
-		});
-
-		const data = response.json();
-
-		const { uploadFiles } = createUploader('http://127.0.0.1:8000/verify-image/')
-
-		uploadFiles(files)
-
-		if (response.ok) {
-		resultDiv.textContent = "Decoded Message: " + data.decoded_message;
-		} else {
-		resultDiv.textContent = "Error: " + (data.detail || "Unknown error");
-		}
-	} catch (err) {
-		resultDiv.textContent = "Failed to connect to backend.";
-	}
-}*/
+const { uploadFiles } = createUploader('https://backend-dzm1.onrender.com/verify-image/')
 </script>
 
 <style scoped>
@@ -163,6 +128,8 @@ label {
 	list-style: none;
 	flex-wrap: wrap;
 	padding: 0;
+  justify-content: center;
+  align-items: center;
 }
 
 .upload-button {
@@ -175,7 +142,7 @@ label {
 	font-size: 1.25rem;
 	font-weight: bold;
 	background: var(--green);
-	color: #fff;
+	color: var(--white-soft);
 	text-transform: uppercase;
 }
 

@@ -126,7 +126,7 @@
 #feature-section-2{
     grid-template-columns: 1fr 3fr 1fr;
     grid-template-rows: 1fr 3fr 1fr;
-    background: linear-gradient(320deg,var(--black) 0%, var(--grey) 33%, var(--green) 67%, var(--light-green) 100%);
+    background: linear-gradient(320deg, var(--black-grad) 0%, var(--blue-grad) 100%);
 }
 .carousel-img {
   border-radius: 15px;
@@ -141,7 +141,7 @@
   grid-row: 1;
   font-size: 30pt;
   margin-top: 1.5rem;
-  color: var(--black);
+  color: var(--white-soft);
 }
 #carousel-nav{
   grid-column: 3;

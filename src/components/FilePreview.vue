@@ -4,7 +4,7 @@
 		<img :src="file.url" :alt="file.file.name" :title="file.file.name" />
 
 		<span class="status-indicator loading-indicator" v-show="file.status == 'loading'">In Progress</span>
-		<span class="status-indicator success-indicator" v-show="file.status == true">Uploaded</span>
+		<span class="status-indicator success-indicator" v-show="file.status == true">Finished</span>
 		<span class="status-indicator failure-indicator" v-show="file.status == false">Error</span>
 	</component>
 </template>
@@ -21,7 +21,7 @@ defineEmits(['remove'])
 
 <style scoped>
 .file-preview {
-	width: 20%;
+	width: 40%;
 	margin: 1rem 2.5%;
 	position: relative;
 	aspect-ratio: 1/1;
@@ -50,8 +50,8 @@ defineEmits(['remove'])
 	.close-icon {
 		width: var(--size);
 		font-size: var(--size);
-		background: #933;
-		color: #fff;
+		background: var(--grey);
+		color: var(--white-soft);
 		top: 0.25rem;
 		cursor: pointer;
 	}
@@ -64,31 +64,31 @@ defineEmits(['remove'])
 
 	.loading-indicator {
 		animation: pulse 1.5s linear 0s infinite;
-		color: #000;
+		color: var(--white-soft);
 	}
 
 	.success-indicator {
-		background: #6c6;
-		color: #040;
+		background: var(--light-green);
+		color: var(--black);
 	}
 
 	.failure-indicator {
 		background: #933;
-		color: #fff;
+		color: var(--white-soft);
 	}
 }
 
 @keyframes pulse {
 	0% {
-		background: #fff;
+		background: var(--black-grad);
 	}
 
 	50% {
-		background: #ddd;
+		background: var(--blue-grad);
 	}
 
 	100% {
-		background: #fff;
+		background: var(--black-grad);
 	}
 }
 </style>

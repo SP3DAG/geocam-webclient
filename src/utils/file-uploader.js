@@ -2,15 +2,22 @@ export async function uploadFile(file, url) {
 	// set up the request data
 	let formData = new FormData()
 	formData.append('file', file.file)
+	formData.append('device_uuid', "GeoCam_1")
 
 	// track status and upload file
-	file.status = 'loading'
-	let response = await fetch(url, { method: 'POST', body: formData })
+	try {
+		file.status = 'loading'
+		let response = await fetch(url, { method: 'POST', body: formData })
 
-	// change status to indicate the success of the upload request
-	file.status = response.ok
+		// change status to indicate the success of the upload request
+		file.status = response.ok
 
-	return response.json()
+		return response.json()
+	}
+	catch (error) {
+		console.log(error)
+	}
+
 }
 
 export function uploadFiles(files, url) {
