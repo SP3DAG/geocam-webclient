@@ -2,7 +2,6 @@ export async function uploadFile(file, url) {
 	// set up the request data
 	let formData = new FormData()
 	formData.append('file', file.file)
-	formData.append('device_uuid', "GeoCam_1")
 
 	// track status and upload file
 	try {

@@ -1,22 +1,22 @@
 <script setup>
-  import {watch, ref} from 'vue';
+  import {watch, ref, onMounted} from 'vue';
   import { defineProps } from 'vue';
-  import { LMap, LTileLayer } from "@vue-leaflet/vue-leaflet"
-
-  let zoom = ref(10)
-  let center = ref([52, 7.5])
+  import * as L from 'leaflet'
 
   const props = defineProps(['msg'])
   const displayedMsg = ref("")
-  const coordinates = ref([])
+  const coordinates = ref({"lat": 0, "lon": 0})
+  let map;
+
 
   function createContent(msg){
     if(msg.includes('|')){
       let parts = msg.split('|');
       let coordstring = parts[1].split(':')
       let coords = coordstring[1].split(',')
-      coordinates.value = [coords[0], coords[1]]
-      displayedMsg.value = "test"
+      coordinates.value = {"lat":coords[0], "lon":coords[1]}
+      displayedMsg.value = "Image was successfully validated!"
+      console.log(parts[0])
     }else{
       displayedMsg.value = props.msg;
     }
@@ -28,16 +28,40 @@
       console.log(coordinates)
     }
   })
+
+  function modalMapInit(){
+    setTimeout(() => {
+      map.invalidateSize()
+    }, 400)
+
+    L.marker([coordinates.value.lat, coordinates.value.lon]).addTo(map);
+    map.panTo(L.latLng(coordinates.value.lat, coordinates.value.lon));
+  }
+
+  onMounted(()=>{
+    map = L.map('map').setView([51.505, -0.09], 13);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+  })
 </script>
 
 <template>
   <p>{{displayedMsg}}</p>
-  <button v-if="coordinates.length < 1" type="button" class="btn btn-primary modal-button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  <button
+      v-if="coordinates.lat !== 0"
+      type="button"
+      class="btn btn-primary modal-button"
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModal"
+      @click="modalMapInit"
+  >
     More Details
   </button>
 
   <!-- Modal -->
-  <div class="modal fade modal-custom" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade modal-custom" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -53,22 +77,12 @@
               </tr>
               <tr>
                 <td><b>Location</b></td>
-                <td>51.234 7.89</td>
-              </tr>
-              <tr>
-                <td><b>Device</b></td>
-                <td>GeoCam_1</td>
+                <td>{{coordinates.lat}}, {{coordinates.lon}}</td>
               </tr>
             </table>
           </div>
 
-          <div class="map-container">
-            <l-map ref="map" v-model:zoom="zoom" v-model:center="center" :useGlobalLeaflet="false">
-              <l-tile-layer url="https://sgx.geodatenzentrum.de/wmts_basemapde/tile/1.0.0/de_basemapde_web_raster_farbe/default/GLOBAL_WEBMERCATOR/{z}/{y}/{x}.png"
-                            layer-type="base"
-                            name="Stadia Maps Basemap"></l-tile-layer>
-            </l-map>
-          </div>
+          <div id="map" class="map-container"></div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -80,8 +94,8 @@
 
 <style scoped>
 .map-container{
-  width: 25vw;
-  height: 50vh;
+  width: 450px;
+  height: 500px;
 }
 .modal-button {
   display: block;

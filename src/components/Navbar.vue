@@ -15,6 +15,7 @@ export default {
         <li><RouterLink to="/product">Product</RouterLink></li>
         <li><RouterLink to="/validate">Validate</RouterLink></li>
         <li><RouterLink to="/shop"><i class="bi bi-basket3-fill"></i> Shop</RouterLink></li>
+        <li><a href="https://backend-dzm1.onrender.com/api/public-keys"><i class="bi bi-key-fill"></i> SSH Keys</a></li>
         <li><a href="https://github.com/SP3DAG" target="_blank"><i class="bi bi-github"></i> GitHub</a></li>
       </ul>
     </nav>
