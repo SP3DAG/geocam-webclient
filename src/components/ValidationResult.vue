@@ -6,6 +6,7 @@
   const props = defineProps(['msg'])
   const displayedMsg = ref("")
   const coordinates = ref({"lat": 0, "lon": 0})
+  const creationDate = ref(new Date())
   let map;
 
 
@@ -14,9 +15,11 @@
       let parts = msg.split('|');
       let coordstring = parts[1].split(':')
       let coords = coordstring[1].split(',')
+
+      let dateString = parts[0].split(/:(.*)/s)
+      creationDate.value = new Date(dateString)
       coordinates.value = {"lat":coords[0], "lon":coords[1]}
       displayedMsg.value = "Image was successfully validated!"
-      console.log(parts[0])
     }else{
       displayedMsg.value = props.msg;
     }
@@ -73,7 +76,7 @@
             <table class="table table-hover table-modal">
               <tr>
                 <td><b>Time</b></td>
-                <td>23.04.2025</td>
+                <td>{{ creationDate.toLocaleString("de-DE") }}</td>
               </tr>
               <tr>
                 <td><b>Location</b></td>

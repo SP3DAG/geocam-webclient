@@ -42,16 +42,6 @@
       <button class="carousel-btn" aria-label="carousel-next" @click="next"><i class="bi bi-arrow-right-circle"></i></button>
     </div>
   </section>
-  <section class="small">
-    <h2>
-      Featurue 3
-    </h2>
-  </section>
-  <section class="small">
-    <h2>
-      Featurue 4
-    </h2>
-  </section>
 </template>
 
 <style scoped>
