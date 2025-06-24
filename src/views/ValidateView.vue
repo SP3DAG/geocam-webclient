@@ -18,7 +18,7 @@
 			<input type="file" id="file-input" accept="image/png, image/jpeg" @change="onInputChange" />
 			</label>
 			<ul class="image-list" v-show="files.length">
-			<FilePreview v-for="file of files" :key="file.id" :file="file" tag="li" @remove="removeFile" />
+			<FilePreview v-for="file of files" :key="file.id" :file="file" tag="li" @remove="customRemove" />
 			</ul>
 		</DropZone>
 		<button v-if="files.length > 0" @click.prevent="startValidating(files)" class="upload-button">Validate</button>
@@ -44,6 +44,12 @@ function onInputChange(e) {
 	addFiles(e.target.files)
 	e.target.value = null // reset so that selecting the same file again will still cause it to fire this change
 }
+
+function customRemove(event){
+  removeFile(event)
+  responseMessage.value = ''
+}
+
 function startValidating(files) {
 	uploadFiles(files)
 	.then( response => {

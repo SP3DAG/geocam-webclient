@@ -3,7 +3,7 @@
 
     <div class="image-section">
       <div class="model-preview">
-        <img src="/grip.jpg" alt="iPhone 16e Camera Case Preview" class="model-image">
+        <img src="@/assets/grip.jpg" alt="iPhone 16e Camera Case Preview" class="model-image">
         <div class="model-overlay">
           <div class="model-icon">
             <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" class="model-svg">
@@ -69,7 +69,7 @@ export default {
   name: 'ShopView',
   data() {
     return {
-      stlFilePath: '/models/iPhone 16e Camera Case Final Release.stl',
+      stlFilePath: 'img/models/iPhone 16e Camera Case Final Release.stl',
       showInfo: false
     }
   },

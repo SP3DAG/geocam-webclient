@@ -9,9 +9,10 @@
   const next = () => carouselRef.value.next()
   const prev = () => carouselRef.value.prev()
 
-  const images = [{id: 0, img: require("@/assets/features/grip.jpg"), text:"Ergonomic grip designed for your needs"},
-                  {id: 1,img: require("@/assets/features/screw.jpg"), text:"Support for 1/4  inch accessories"},
-                  {id: 2,img: require("@/assets/features/shutter.jpg"), text:"Removable shutter button for maximal versatility"}]
+  const images = [{id: 0, img: require("@/assets/features/carousel_1.png"), text:""},
+                  {id: 1,img: require("@/assets/features/carousel_2.png"), text:""},
+                  {id: 2,img: require("@/assets/features/carousel_3.png"), text:""},
+                  {id: 3,img: require("@/assets/features/carousel_4.png"), text:""}]
 
   const config = {
     height: 200,

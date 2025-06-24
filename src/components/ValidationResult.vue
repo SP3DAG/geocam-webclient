@@ -51,9 +51,17 @@
 </script>
 
 <template>
-  <p>{{displayedMsg}}</p>
+  <p class="result-msg">
+    <i v-if="msg.includes('|')"
+       class="bi bi-check-circle-fill success"
+    ></i>
+    <i v-if="!msg.includes('|') && displayedMsg !==''"
+      class="bi bi-exclamation-circle-fill error"
+    ></i>
+    {{displayedMsg}}
+  </p>
   <button
-      v-if="coordinates.lat !== 0"
+      v-if="msg.includes('|') && displayedMsg !== ''"
       type="button"
       class="btn btn-primary modal-button"
       data-bs-toggle="modal"
@@ -115,5 +123,15 @@
 }
 .table-modal{
   text-align: left;
+}
+.result-msg{
+  font-size: 20pt;
+  font-weight: bold;
+}
+.success{
+  color: var(--green);
+}
+.error{
+  color: var(--error-red);
 }
 </style>
