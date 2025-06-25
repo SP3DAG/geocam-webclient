@@ -1,4 +1,6 @@
-﻿# GeoCam Web Client
+﻿![title_image](/src/assets/readme_title.png)
+
+# GeoCam Web Client
 
 A Vue 3 frontend for the GeoCam iPhone application that automatically geotags photos.
 
@@ -9,22 +11,10 @@ geocam-webclient/
 ├── src/
 │   ├── assets/               # Static assets (images, fonts)
 │   ├── components/           # Reusable Vue components
-│   │   ├── camera/           # Camera capture components
-│   │   ├── common/           # Shared utilities
-│   │   ├── gallery/          # Photo gallery components
-│   │   ├── map/              # Map visualization
-│   │   └── ui/               # UI elements (buttons, cards)
-│   ├── composables/          # Vue composition API functions
 │   ├── router/               # Vue router configuration
 │   ├── stores/               # Pinia state management
 │   ├── utils/                # Utility functions
-│   │   ├── api.js            # API communication
-│   │   └── geolocation.js    # Location services
 │   ├── views/                # Page components
-│   │   ├── HomeView.vue
-│   │   ├── CaptureView.vue
-│   │   ├── GalleryView.vue
-│   │   └── MapView.vue
 │   ├── App.vue               # Root component
 │   └── main.js               # Application entry point
 ├── .gitignore
@@ -48,27 +38,29 @@ npm install -g @vue/cli
 - Vue 3
 - Pinia (state management)
 - Vue Router
-- Mapbox GL JS (for maps)
+- Leaflet (for maps)
 - Axios (for API calls)
-
-### Environment Variables
-Create a `.env` file with:
-```
-VUE_APP_MAPBOX_TOKEN=your_mapbox_access_token
-VUE_APP_API_BASE_URL=your_api_base_url
-```
+- Bootstrap CSS framework
+-
 
 ## Installation
+
 ```bash
 git clone https://github.com/SP3DAG/geocam-webclient.git
 cd geocam-webclient
 npm install
 npm run dev
+
 ```
 
 ## Development Scripts
 ```bash
-npm run dev     # Start development server
-npm run build   # Create production build
-npm run lint    # Run linter
+npm run serve     # Start development server
+npm run build     # Create production build
 ```
+
+## Publish
+
+For publishing, the project needs to be build using `npm run build`. 
+The production version will then be created in the ./dist/ directory by default.
+This folder can then be copied to the desired publishing server.
