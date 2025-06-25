@@ -36,7 +36,10 @@
           <strong>Material:</strong> PLA
         </div>
         <div class="info-item">
-          <strong>Duration:</strong> 2h 30 min
+          <strong>Printer:</strong> Bambu Lab X1 Carbon
+        </div>
+        <div class="info-item">
+          <strong>Duration:</strong> 2h 20min 45sec
         </div>
       </div>
 
