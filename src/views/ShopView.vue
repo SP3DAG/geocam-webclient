@@ -13,14 +13,14 @@
               <path d="M17 5L7 10"/>
             </svg>
           </div>
-          <span class="model-badge">3D STL</span>
+          <span class="model-badge">3D-3MF</span>
         </div>
       </div>
     </div>
 
     <div class="info-section">
       <h4 class="product-title">iPhone 16e Camera Case</h4>
-      <p class="product-subtitle text-muted">3D STL-Model for 3D-Printing </p>
+      <p class="product-subtitle text-muted">3D-3MF-Model for 3D-Printing </p>
 
       <div class="model-info">
         <div class="info-item">
