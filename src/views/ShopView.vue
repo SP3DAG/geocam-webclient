@@ -46,13 +46,13 @@
       <div class="action-buttons mt-4">
         <div class="row g-2">
           <div class="col-6">
-            <button class="btn btn-primary btn-lg w-100" @click="downloadSTL">
+            <button class="btn btn-primary btn-lg w-100" @click="openRelease">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="me-2">
                 <path d="M21 15V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V15"/>
                 <polyline points="7,10 12,15 17,10"/>
                 <line x1="12" y1="15" x2="12" y2="3"/>
               </svg>
-              download .STL file
+              download 3D-Model
             </button>
           </div>
           <div class="col-6">
@@ -77,13 +77,8 @@ export default {
     }
   },
   methods: {
-    downloadSTL() {
-      const link = document.createElement('a')
-      link.href = this.stlFilePath
-      link.download = 'iPhone 16e Camera Case Final Release.stl'
-      document.body.appendChild(link)
-      link.click()
-      document.body.removeChild(link)
+    openRelease() {
+      window.open('https://github.com/SP3DAG/3D-Printing/releases/download/v1.0.0/iPhone.16e.Camera.Case.Final.Release.3MF', '_blank')
     },
     openGitHub() {
       window.open('https://github.com/SP3DAG/3D-Printing', '_blank')
