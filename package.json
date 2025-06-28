@@ -1,5 +1,5 @@
 {
-  "name": "geocam-new",
+  "name": "geocam-webclient",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -11,7 +11,10 @@
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.7",
     "core-js": "^3.8.3",
+    "gsap": "^3.13.0",
     "leaflet": "^1.9.4",
+    "three": "^0.177.0",
+    "three-stdlib": "^2.36.0",
     "vue": "^3.2.13",
     "vue-router": "^4.5.1",
     "vue3-carousel": "^0.16.0"
