@@ -1,8 +1,8 @@
-﻿![title_image](/src/assets/readme_title.png)
-
-# GeoCam Web Client
+﻿# GeoCam Web Client
 
 A Vue 3 frontend for the GeoCam iPhone application that automatically geotags photos.
+
+![title_image](/src/assets/readme_title.png)
 
 ## Project Structure
 

@@ -29,7 +29,7 @@ export default {
     const canvas = document.getElementById("hero-lightpass");
     const context = canvas.getContext("2d");
 
-    const frameCount = 797;
+    const frameCount = 201;
     const currentFrame = index => (
         require(`@/assets/frames/${index.toString().padStart(3, '0')}.png`)
     )
