@@ -1,26 +1,27 @@
+<script setup>
+import { useRoute } from 'vue-router'
+import Navbar from "@/components/Navbar.vue";
+//import { ref, watch } from 'vue'
+
+const route = useRoute()
+console.log(route)
+
+//const username = ref(route.params.id)
+</script>
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+    <Navbar />
+    <RouterView />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+  name: 'App'
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+/* Global styles here */
+
 </style>
