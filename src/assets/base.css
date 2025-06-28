@@ -1,5 +1,6 @@
 :root {
     --white-soft: #f8f8f8;
+    --white-transparent: #f8f8f85d;
     --black-soft: #222222;
     --divider-light: rgba(60, 60, 60, 0.29);
     --divider-dark: rgba(84, 84, 84, 0.65);
@@ -9,6 +10,7 @@
     --grey: #454955;
     --light-grey: #F3EFF5;
     --light-green: #72b01d;
+    --light-green-transparent: #73b01d7c;
     --green: #3F7D20;
 
     --blue-grad: #3B5463;

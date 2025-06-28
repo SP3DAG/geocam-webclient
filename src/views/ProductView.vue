@@ -46,9 +46,6 @@
 </template>
 
 <style scoped>
-  *{
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  }
   section{
     width: 100%;
     display: grid;

@@ -88,9 +88,6 @@ export default {
 </script>
 
 <style scoped>
-*{
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-}
 .shop-container {
   height: 100vh;
   display: grid;
