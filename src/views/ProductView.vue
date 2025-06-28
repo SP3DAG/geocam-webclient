@@ -17,7 +17,7 @@
   const config = {
     height: 200,
     itemsToShow: 2,
-    gap: 5,
+    gap: 35,
   }
 </script>
 <template>
@@ -31,7 +31,7 @@
     <b id="carousel-headline">
       See the features
     </b>
-    <Carousel ref="carouselRef" v-model="currentSlide" v-bind="config" id="feature-carousel" gap=35 wrapAround="true" >
+    <Carousel ref="carouselRef" v-model="currentSlide" v-bind="config" id="feature-carousel" wrapAround="true" >
       <Slide v-for="image in images" :key="image.id">
         <img :src="image.img" alt="image" class="carousel-img " />
         <p class="slide-text">{{ image.text }}</p>

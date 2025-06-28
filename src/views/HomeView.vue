@@ -4,7 +4,11 @@
   <canvas id="hero-lightpass"/>
   <div class="main" id="hello">
     <div class="section" id="section-1">
-      <img class="title" src="@/assets/title_darkmode.png"/>
+      <img class="title" src="@/assets/title_darkmode.png"/><br/>
+      <p>An ifgi study project</p>
+      <div class="mouse-wrapper">
+        <div class="mouse"></div>
+      </div>
     </div>
     <div class="section" id="section-2">
       <div class="left-info">
@@ -148,13 +152,22 @@ export default {
   opacity: 0;
   transition: opacity 0.3s;
 }
+#section-1{
+  flex-direction: column;
+}
+#section-1 > p{
+  position: relative;
+  top: -20%;
+  font-size: 32pt;
+  color: var(--white-soft);
+}
 .show{
   opacity: 1;
 }
 .title{
   height: 10rem;
   position: relative;
-  top: -25%;
+  top: -20%;
 }
 .left-info{
   color: var(--black);
@@ -198,5 +211,54 @@ canvas {
   max-height: 100vh;
   overflow: hidden;
   z-index: -2;
+}
+.mouse-wrapper{
+  position: relative;
+  top: 25%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  background-color: var(--white-transparent);
+  -webkit-box-shadow: 0 0 20px 20px var(--white-transparent);
+    box-shadow: 0 0 20px 20px var(--white-transparent);
+  border-radius: 25px;
+}
+/* Animation for scroll info */
+.mouse {
+  grid-column: 2;
+  grid-row: 3;
+	width: 50px;
+	height: 90px;
+	border: 3px solid var(--black);
+	border-radius: 60px;
+	position: relative;
+	&::before {
+		content: '';
+		width: 12px;
+		height: 12px;
+		position: absolute;
+		top: 10px;
+		left: 50%;
+		transform: translateX(-50%);
+		background-color: var(--black);
+		border-radius: 50%;
+		opacity: 1;
+		animation: wheel 2s infinite;
+		-webkit-animation: wheel 2s infinite;
+	}
+}
+
+@keyframes wheel {
+	to {
+		opacity: 0;
+		top: 60px;
+	}
+}
+
+@-webkit-keyframes wheel {
+	to {
+		opacity: 0;
+		top: 60px;
+	}
 }
 </style>
