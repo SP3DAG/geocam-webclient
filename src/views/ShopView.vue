@@ -3,7 +3,7 @@
 
     <div class="image-section">
       <div class="model-preview">
-        <img src="/grip.jpg" alt="iPhone 16e Camera Case Preview" class="model-image">
+        <img src="@/assets/preview.png" alt="iPhone 16e Camera Case Preview" class="model-image">
         <div class="model-overlay">
           <div class="model-icon">
             <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" class="model-svg">
@@ -13,14 +13,14 @@
               <path d="M17 5L7 10"/>
             </svg>
           </div>
-          <span class="model-badge">3D STL</span>
+          <span class="model-badge">3D-3MF</span>
         </div>
       </div>
     </div>
 
     <div class="info-section">
       <h4 class="product-title">iPhone 16e Camera Case</h4>
-      <p class="product-subtitle text-muted">3D STL-Model for 3D-Printing </p>
+      <p class="product-subtitle text-muted">3D-3MF-Model for 3D-Printing </p>
 
       <div class="model-info">
         <div class="info-item">
@@ -36,20 +36,23 @@
           <strong>Material:</strong> PLA
         </div>
         <div class="info-item">
-          <strong>Duration:</strong> 2h 30 min
+          <strong>Printer:</strong> Bambu Lab X1 Carbon
+        </div>
+        <div class="info-item">
+          <strong>Duration:</strong> 2h 20min 45sec
         </div>
       </div>
 
       <div class="action-buttons mt-4">
         <div class="row g-2">
           <div class="col-6">
-            <button class="btn btn-primary btn-lg w-100" @click="downloadSTL">
+            <button class="btn btn-primary btn-lg w-100" @click="openRelease">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="me-2">
                 <path d="M21 15V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V15"/>
                 <polyline points="7,10 12,15 17,10"/>
                 <line x1="12" y1="15" x2="12" y2="3"/>
               </svg>
-              download .STL file
+              download 3D-Model
             </button>
           </div>
           <div class="col-6">
@@ -69,18 +72,13 @@ export default {
   name: 'ShopView',
   data() {
     return {
-      stlFilePath: '/models/iPhone 16e Camera Case Final Release.stl',
+      stlFilePath: 'img/models/iPhone 16e Camera Case Final Release.stl',
       showInfo: false
     }
   },
   methods: {
-    downloadSTL() {
-      const link = document.createElement('a')
-      link.href = this.stlFilePath
-      link.download = 'iPhone 16e Camera Case Final Release.stl'
-      document.body.appendChild(link)
-      link.click()
-      document.body.removeChild(link)
+    openRelease() {
+      window.open('https://github.com/SP3DAG/3D-Printing/releases/download/v1.0.0/iPhone.16e.Camera.Case.Final.Release.3MF', '_blank')
     },
     openGitHub() {
       window.open('https://github.com/SP3DAG/3D-Printing', '_blank')
@@ -90,9 +88,6 @@ export default {
 </script>
 
 <style scoped>
-*{
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-}
 .shop-container {
   height: 100vh;
   display: grid;

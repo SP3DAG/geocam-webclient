@@ -9,14 +9,15 @@
   const next = () => carouselRef.value.next()
   const prev = () => carouselRef.value.prev()
 
-  const images = [{id: 0, img: require("@/assets/features/grip.jpg"), text:"Ergonomic grip designed for your needs"},
-                  {id: 1,img: require("@/assets/features/screw.jpg"), text:"Support for 1/4  inch accessories"},
-                  {id: 2,img: require("@/assets/features/shutter.jpg"), text:"Removable shutter button for maximal versatility"}]
+  const images = [{id: 0, img: require("@/assets/features/carousel_1.png"), text:""},
+                  {id: 1,img: require("@/assets/features/carousel_2.png"), text:""},
+                  {id: 2,img: require("@/assets/features/carousel_3.png"), text:""},
+                  {id: 3,img: require("@/assets/features/carousel_4.png"), text:""}]
 
   const config = {
     height: 200,
     itemsToShow: 2,
-    gap: 5,
+    gap: 35,
   }
 </script>
 <template>
@@ -30,7 +31,7 @@
     <b id="carousel-headline">
       See the features
     </b>
-    <Carousel ref="carouselRef" v-model="currentSlide" v-bind="config" id="feature-carousel" gap=35 wrapAround="true" >
+    <Carousel ref="carouselRef" v-model="currentSlide" v-bind="config" id="feature-carousel" wrapAround="true" >
       <Slide v-for="image in images" :key="image.id">
         <img :src="image.img" alt="image" class="carousel-img " />
         <p class="slide-text">{{ image.text }}</p>
@@ -45,9 +46,6 @@
 </template>
 
 <style scoped>
-  *{
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  }
   section{
     width: 100%;
     display: grid;

@@ -73,7 +73,7 @@ defineEmits(['remove'])
 	}
 
 	.failure-indicator {
-		background: #933;
+		background: var(--error-red);
 		color: var(--white-soft);
 	}
 }
