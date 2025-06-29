@@ -22,12 +22,16 @@
   "devDependencies": {
     "@babel/core": "^7.12.16",
     "@babel/eslint-parser": "^7.12.16",
-    "@vue/cli-plugin-babel": "~5.0.0",
-    "@vue/cli-plugin-eslint": "~5.0.0",
-    "@vue/cli-service": "~5.0.0",
+    "@vue/cli-plugin-babel": "^5.0.8",
+    "@vue/cli-plugin-eslint": "^5.0.8",
+    "@vue/cli-service": "^5.0.8",
+    "ajv": "^8.17.1",
+    "braces": "^3.0.3",
+    "cross-spawn": "^7.0.6",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
-    "sass": "^1.89.2"
+    "sass": "^1.89.2",
+    "webpack-dev-server": "^5.2.2"
   },
   "eslintConfig": {
     "root": true,
