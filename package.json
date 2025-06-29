@@ -30,6 +30,7 @@
     "cross-spawn": "^7.0.6",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
+    "gh-pages": "^6.3.0",
     "sass": "^1.89.2",
     "webpack-dev-server": "^5.2.2"
   },
